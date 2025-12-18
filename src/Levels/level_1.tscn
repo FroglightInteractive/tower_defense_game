@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ct6dv3pu554bg"]
+
+[ext_resource type="Script" uid="uid://dts01oewa6gr2" path="res://src/Levels/level.gd" id="1_42hop"]
+
+[sub_resource type="Curve2D" id="Curve2D_d1vfg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -214, -48, -46, 56, 46, -56, -71, -134, -63, -32, 63, 32, 85, -161, -38, -40, 38, 40, 166, -93, -6, -24.99997, 6, 24.99997, 224, 37, 11, -29, -11, 29, 214, 161, 16, -6, -16, 6, 149, 208, 21, 1, -21, -1, -26, 249, 24, 10, -24, -10, -112, 226, 26, 25, -26, -25, -177, 136, 0, 0, 0, 0, -227, 92)
+}
+point_count = 11
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkht1"]
+radius = 14.035668
+
+[node name="Level1" type="Node2D" unique_id=1661579047]
+script = ExtResource("1_42hop")
+
+[node name="Path" type="Path2D" parent="." unique_id=991557100]
+curve = SubResource("Curve2D_d1vfg")
+
+[node name="End" type="Area2D" parent="." unique_id=868907018 groups=["level_end"]]
+position = Vector2(-229, 92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End" unique_id=1387192928]
+shape = SubResource("CircleShape2D_kkht1")
+
+[connection signal="area_entered" from="End" to="." method="_on_end_area_entered"]

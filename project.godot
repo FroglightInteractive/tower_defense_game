@@ -14,7 +14,17 @@ config/name="TowerDefenseGame"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[global_group]
+
+level_end="Marks the end of a level for the enemies"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
